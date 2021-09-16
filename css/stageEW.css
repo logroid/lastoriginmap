@@ -433,3 +433,6 @@ section {
     border-width: 5px 5px 0 0;
   }
 }
+* {
+  font-family: Meiryo;
+}

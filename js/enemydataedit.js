@@ -24,7 +24,7 @@ window.onload = async function() {
 
 	document.getElementById("delete-index").addEventListener("click", e=>{
 		e.preventDefault();
-		if(confirm("철충이 완전히 삭제됩니다. 삭제하시겠습니까?"))
+		if(confirm("鉄虫이 완전히 삭제됩니다. 삭제하시겠습니까?"))
 		{
 			deleteEnemy();
 		}
@@ -125,11 +125,11 @@ function submitEnemy()
 	{
 		enemyDataList[index]={};
 		enemyData = enemyDataList[index];
-		alert("새로운 철충을 추가합니다.");
+		alert("새로운 鉄虫을 추가합니다.");
 	}
 	else
 	{
-		if(!confirm("이미 있는 철충입니다. 덮어씌우겠습니까?")) return 0;
+		if(!confirm("이미 있는 鉄虫입니다. 덮어씌우겠습니까?")) return 0;
 	}
 
 	if(document.getElementById("uncertain-stat").checked)
@@ -243,7 +243,7 @@ function deleteEnemy()
 	var enemyIndex = document.getElementById("input-index").value;
 	if(!(enemyIndex in enemyDataList))
 	{
-		alert("철충이 존재하지 않습니다!");
+		alert("鉄虫이 존재하지 않습니다!");
 		throw "No enemy";
 	}
 	else delete enemyDataList[enemyIndex];

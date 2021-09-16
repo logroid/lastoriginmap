@@ -43,7 +43,7 @@ function drawEnemyPageNew(data, lvl, skilldata)
 	var ATK = calcLvlValue(data.ATK, lvl);
 	var DEF = calcLvlValue(data.DEF, lvl);
 
-	document.title = enemyName + ' 정보';
+	document.title = enemyName + ' 情報';
 	$('#name').append(enemyName);
 	$('.image').append("<img src=\"images/profile/" + data.img + ".png\" style=\"width: 100%\" />");
 	writeData('LVL', lvl);
@@ -108,7 +108,7 @@ function drawEnemyPage(stat, desc, updated = true)
 	{
 		var enemyName = stat.name;
 	}
-	document.title = enemyName + ' 정보';
+	document.title = enemyName + ' 情報';
 	$('#name').append(enemyName);
 	$('.image').append("<img src=\"images/profile/" + desc.img + ".png\" style=\"width: 100%\" />");
 	writeData('LVL', stat.LVL);
@@ -193,7 +193,7 @@ function drawSkillInfoNew(index, ATK, skilldata)
 	var attr = "normal"
 	if (skilldata.attr != undefined) { attr = skilldata.attr; }
 	$('.skill-name:last').html("<img class='icon-attr' src='images/" + attr + ".png'></img><h5> Lv. 1</h5> <h3>" + skilldata.name + "</h3>");
-	$('.skill-range:last').html("사정거리 " + skilldata.range);
+	$('.skill-range:last').html("射程距離 " + skilldata.range);
 	$('.skill-range:last').append("<br>AP-" + skilldata.AP);
 	drawSkillArea($('.skill-area:last'), skilldata.area);
 
@@ -218,7 +218,7 @@ function drawSkillInfoNew(index, ATK, skilldata)
 		var attr = "normal"
 		if (desc.attr != undefined) { attr = desc.attr; }
 		$('.skill-name:last').html("<img class='icon-attr' src='images/" + attr + ".png'></img><h5> Lv. " + LVL + "</h5> <h3>" + desc.name + "</h3>");
-		$('.skill-range:last').html("사정거리 " + desc.range);
+		$('.skill-range:last').html("射程距離 " + desc.range);
 		if (desc.AP != undefined)
 		{
 			$('.skill-range:last').append("<br>AP-" + desc.AP);
@@ -257,7 +257,7 @@ function drawSkillInfo(index, LVL, power, desc)
 	var attr = "normal"
 	if(desc.attr!=undefined) { attr=desc.attr; }
 	$('.skill-name:last').html("<img class='icon-attr' src='images/"+attr+".png'></img><h5> Lv. "+LVL+"</h5> <h3>"+desc.name+"</h3>");
-	$('.skill-range:last').html("사정거리 "+desc.range);
+	$('.skill-range:last').html("射程距離 "+desc.range);
 	if(desc.AP!=undefined)
 	{
 		$('.skill-range:last').append("<br>AP-"+desc.AP);
@@ -299,7 +299,7 @@ function drawInfo(index, info)
 	$('.skill-description:last').removeClass('.skill-description');
 	$('.info-description:last').css('grid-area', '3/1/5/13');
 	if (info === undefined) info = '-';
-	$('.info-description:last').html('<h3>대상 정보</h3><p>' + info + '</p>');
+	$('.info-description:last').html('<h3>대상 情報</h3><p>' + info + '</p>');
 
 	$('.active:last').removeClass("active");
 	$('.skill-container:eq(' + (index + 1) + ') .btn-info').addClass("active");
