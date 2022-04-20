@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>철충 지도 입력기</title>
+	<title>鉄虫 マップ 입력기</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="css/dataedit.css">
 	<script src="js/jquery.min.js"></script>
@@ -36,8 +36,8 @@
 <body>
 	<div class="container">
 		<header>
-			<h2 id="title">라스트 오리진 철충 지도 데이터 편집기 v0.25</h2>
-			<p>본 페이지는 철충 지도의 제작 보조용으로만 사용되고 있습니다. 편집기에 대한 요청이나 제보는 받지 않습니다.</p>
+			<h2 id="title">라스트 오리진 鉄虫 マップ 데이터 편집기 v0.25</h2>
+			<p>본 페이지는 鉄虫 マップ의 제작 보조용으로만 사용되고 있습니다. 편집기에 대한 요청이나 제보는 받지 않습니다.</p>
 		</header>
 		<section>
 			<hr>
@@ -51,7 +51,7 @@
 			</form>
 			<hr>
 			<form id="form-stage">
-				<label id="label-stage" for="input-stage">스테이지: </label>
+				<label id="label-stage" for="input-stage">ステージ: </label>
 				<input type="text" autocomplete="off" id="input-stage"><br>
 				<input type="radio" id="Main" name="stage-type" value="Main" checked="checked"><label for="Main">Main</label>
 				<input type="radio" id="B" name="stage-type" value="B"><label for="B">B</label>
@@ -61,17 +61,17 @@
 				<label id="label-stagegrid" for="input-stagegrid">그리드(x,y): </label>
 				<input type="text" autocomplete="off" id="input-stagegridx">
 				<input type="text" autocomplete="off" id="input-stagegridy"><br>
-				<label id="label-prevstage" for="input-prevstage">이전 스테이지: </label>
+				<label id="label-prevstage" for="input-prevstage">이전 ステージ: </label>
 				<input type="text" autocomplete="off" id="input-prevstage"><br>
 				<input type="radio" id="prevMain" name="prevstage-type" value="Main" checked="checked"><label
 					for="prevMain">Main</label>
 				<input type="radio" id="prevB" name="prevstage-type" value="B"><label for="prevB">B</label>
 				<input type="radio" id="prevEx" name="prevstage-type" value="Ex"><label for="prevEx">Ex</label><br>
-				<input type="submit" value="스테이지 입력">
+				<input type="submit" value="ステージ 입력">
 			</form>
 			<hr>
 			<form id="form-wave">
-				<div class="current-stage">현재 스테이지: </div>
+				<div class="current-stage">현재 ステージ: </div>
 				<label for="input-wave">웨이브:</label>
 				<input type="number" list="wave-list" autocomplete="off" id="input-wave"><br>
 				<datalist id="wave-list"></datalist>
@@ -79,7 +79,7 @@
 			</form>
 			<hr>
 			<form id="form-enemy">
-				<div class="current-stage">현재 스테이지: </div>
+				<div class="current-stage">현재 ステージ: </div>
 				<div class="current-wave">현재 웨이브: </div>
 				<div class="current-wave-map">
 					<div class="cell cell1"></div>
@@ -94,11 +94,11 @@
 				</div>
 				<div class="input-container">
 					<div class="input-wrap">
-						<label for="input-name">철충 이름:</label>
+						<label for="input-name">鉄虫 이름:</label>
 						<input type="text" id="input-name" list="name-list" autocomplete="off"><br>
 						<label for="input-LVL">레벨: </label><input type="number" autocomplete="off" id="input-LVL">
 						<button type="button" id="submit-name">입력</button><br>
-						<label for="input-index">철충 인덱스:</label>
+						<label for="input-index">鉄虫 인덱스:</label>
 						<input type="text" id="input-index" list="index-list" autocomplete="off"><br>
 						<datalist id="name-list">
 						</datalist>
@@ -144,7 +144,7 @@
 							</tbody>
 						</table>
 						<button type="button" id="delete">삭제</button><br>
-						<input type="submit" value="철충 입력"><br>
+						<input type="submit" value="鉄虫 입력"><br>
 						<div id="enemy-stat"></div>
 					</div>
 					<div class="input-latest">

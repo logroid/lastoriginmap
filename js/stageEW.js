@@ -1,10 +1,10 @@
 //페이지 시작시 실행할 함수
 window.onload = async function ()
 {
-	//URL에서 스테이지명 확인
+	//URL에서 ステージ명 확인
 	var stageTitle = getURLParameter('stagetitle');
 
-	//해당 스테이지 데이터 및 철충 이미지 데이터 로드
+	//해당 ステージ 데이터 및 鉄虫 이미지 데이터 로드
 	var stageLoadData = loadStageData(stageTitle);
 	var groupData = loadgroupData(stageTitle);
 	var enemyDataList = loadEnemyDataList();
@@ -40,7 +40,7 @@ window.onload = async function ()
 
 async function drawPage(stageLoadData, groupData, enemyDataList)
 {
-	//해당 스테이지 데이터 및 전후 스테이지 목록 저장
+	//해당 ステージ 데이터 및 전후 ステージ 목록 저장
 	var stageData = stageLoadData.stageData;
 	var stageList = stageLoadData.stageList;
 
@@ -52,12 +52,12 @@ async function drawPage(stageLoadData, groupData, enemyDataList)
 
 	//문서 제목
 	document.title = stageName;
-	//뒤로가기 버튼, 상단 제목
+	//戻る 버튼, 상단 제목
 	$("a.btn-back").attr("href", "areaEW.html?areanum=" + getAreaByStageTitle(stageData.title));
 	$('#stage-title').html(stageName);
 
-	//스테이지 화살표 설정
-	//첫 스테이지일 시 왼쪽 화살표 숨기고, 아니면 이전 스테이지로 링크
+	//ステージ 화살표 설정
+	//첫 ステージ일 시 왼쪽 화살표 숨기고, 아니면 이전 ステージ로 링크
 	if (getIndexByStageTitle(stageData.title) == stageList[0])
 	{
 		$(".stage-control.control-left").addClass("control-end");
@@ -66,7 +66,7 @@ async function drawPage(stageLoadData, groupData, enemyDataList)
 	{
 		$(".stage-control.control-left").attr("href", "stageEW.html?stagetitle=" + getAreaByStageTitle(stageData.title) + "-" + stageList[stageList.indexOf(getIndexByStageTitle(stageData.title)) - 1] + getTypeByStageTitle(stageData.title));
 	}
-	//마지막 스테이지일 시 오른쪽 화살표 숨기고, 아니면 다음 스테이지로 링크
+	//마지막 ステージ일 시 오른쪽 화살표 숨기고, 아니면 다음 ステージ로 링크
 	if (getIndexByStageTitle(stageData.title) == stageList[stageList.length - 1])
 	{
 		$(".stage-control.control-right").addClass("control-end");
@@ -95,13 +95,13 @@ async function drawPage(stageLoadData, groupData, enemyDataList)
 			}
 
 
-			//철충 위치 그리기
+			//鉄虫 위치 그리기
 			for (var posIndex = 0; posIndex < groupData[stageData.wave[waveIndex]][groupIndex].enemylist.length; posIndex++)
 			{
-				//현재 철충 위치
+				//현재 鉄虫 위치
 				var pos = posIndex;
 
-				//해당 위치에 철충이 존재할 경우
+				//해당 위치에 鉄虫이 존재할 경우
 				if (groupData[stageData.wave[waveIndex]][groupIndex].enemylist[posIndex].index != "")
 				{
 					//적 인덱스, 레벨
@@ -195,10 +195,10 @@ function changeGroup(index)
 	$('.carousel-slide').eq(wave).find('.carousel-track-vertical').css("transform", "translateY(" + (-translateheight * index) + "px)");
 }
 
-//적 정보 팝업 띄우는 함수
+//적 情報 팝업 띄우는 함수
 function show_enemynew(type, enemyIndex, LVL)
 {
 	var popupX = (window.screen.width / 2) - (540 / 2);
-	var popupY = (window.screen.height / 2) - (450 / 2);
-	window.open('enemy.html?type=' + type + '&enemy=' + enemyIndex + '&lvl=' + LVL, "popup_enemy", 'status=no, height=450, width=540, left=' + popupX + ', top=' + popupY + ', screenX=' + popupX + ', screenY= ' + popupY);
+	var popupY = (window.screen.height / 2) - (580 / 2);
+	window.open('enemy.html?type=' + type + '&enemy=' + enemyIndex + '&lvl=' + LVL, "popup_enemy", 'status=no, height=580, width=555, left=' + popupX + ', top=' + popupY + ', screenX=' + popupX + ', screenY= ' + popupY).focus();
 }

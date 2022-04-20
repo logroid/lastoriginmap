@@ -97,8 +97,8 @@ section {
 
 .btn-back {
 	display: inline-block;
-    margin: 20px;
-    padding: 10px;
+    margin: 0 10px;
+    padding: 15px 30px;
     color: white;
     border-radius: 5px;
     background-color: rgb(100, 100, 220);
@@ -108,7 +108,7 @@ section {
     position: relative;
     width: 100%;
     overflow-x: hidden;
-    padding: 2% 0;
+    padding: 10px 0 0;
     vertical-align: middle;
 }
 
@@ -332,4 +332,10 @@ section {
 		transform: scaleY(2) rotate(45deg);
 		border-width: 5px 5px 0 0;
 	}
+}
+.wave-grid div a > img + p {
+  word-break: break-all;
+}
+* {
+  font-family: Meiryo;
 }

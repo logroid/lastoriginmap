@@ -76,8 +76,8 @@ async function submitArea(overide = false)
 	if (!overide && areaindex == obj.title) { alert("현재와 같은 지역입니다!"); throw "Same area"; }
 
 	//area 입력값 표시
-	document.getElementById("label-stage").textContent = "스테이지: " + areaindex + "-";
-	document.getElementById("label-prevstage").textContent = "이전 스테이지: " + areaindex + "-";
+	document.getElementById("label-stage").textContent = "ステージ: " + areaindex + "-";
+	document.getElementById("label-prevstage").textContent = "이전 ステージ: " + areaindex + "-";
 
 	//데이터 로드 시도,실패시 새로운 데이터 생성
 	try
@@ -105,7 +105,7 @@ async function submitArea(overide = false)
 		console.log("Submit area" + areaindex);
 	}
 
-	//하위 입력칸 초기화, 스테이지 입력칸 활성화
+	//하위 입력칸 초기화, ステージ 입력칸 활성화
 	resetStageInput();
 	resetWaveInput();
 	resetEnemyInput();
@@ -115,25 +115,25 @@ async function submitArea(overide = false)
 	document.getElementById("input-result").value = JSON.stringify(obj, null, 2);
 }
 
-//스테이지 입력
+//ステージ 입력
 function submitStage()
 {
 	//area 및 stage 입력값 읽기 및 예외처리
 	var areaindex = document.getElementById("input-areaindex").value;
 	if (!areaindex) { alert("지역을 먼저 입력하세요!"); throw "No area"; }
 	var stage = document.getElementById("input-stage").value;
-	if (!stage) { alert("스테이지를 입력하세요!"); throw "No stage"; }
+	if (!stage) { alert("ステージ를 입력하세요!"); throw "No stage"; }
 
-	//표시할 이름, 그리드 위치 및 이전 스테이지 입력값 읽기
+	//표시할 이름, 그리드 위치 및 이전 ステージ 입력값 읽기
 	var name = document.getElementById("input-stagename").value;
 	var grid = ["x", "y"].map(id => parseInt(document.getElementById("input-stagegrid" + id).value));
 	var prevstage = document.getElementById("input-prevstage").value;
 
-	//스테이지 이름 생성
+	//ステージ 이름 생성
 	var title = areaindex + "-" + stage;
 	var prevtitle = areaindex + "-" + prevstage;
 
-	//스테이지 타입(Main, B, Ex) 읽기
+	//ステージ 타입(Main, B, Ex) 읽기
 	var type = "";
 	var prevtype = "";
 	Array.from(document.getElementsByName("stage-type")).forEach(el =>
@@ -147,10 +147,10 @@ function submitStage()
 	if (type != "Main") { title += type }
 	if (prevtype != "Main") { prevtitle += prevtype }
 
-	//스테이지 프로퍼티가 없으먼 생성
+	//ステージ 프로퍼티가 없으먼 생성
 	if (!obj.stage) { obj.stage = []; }
 
-	//현재 데이터 내에 입력할 스테이지가 없으면 새로운 스테이지 생성
+	//현재 데이터 내에 입력할 ステージ가 없으면 새로운 ステージ 생성
 	if (obj.stage.findIndex(el => el.title == title) == -1)
 	{
 		let index = obj.stage.push({}) - 1;
@@ -175,10 +175,10 @@ function submitStage()
 		}
 	}
 
-	//스테이지 및 그리드 입력값 표시
+	//ステージ 및 그리드 입력값 표시
 	Array.from(document.getElementsByClassName("current-stage")).forEach(el =>
 	{
-		el.textContent = "현재 스테이지: " + title;
+		el.textContent = "현재 ステージ: " + title;
 	});
 	document.getElementById("label-stagegrid").textContent = "그리드(x,y): (" + grid[0] + "," + grid[1] + ")";
 
@@ -203,7 +203,7 @@ async function submitWave()
 {
 	//stage 및 wave 입력값 읽기 및 예외처리
 	var stageTitle = document.getElementsByClassName("current-stage")[0].textContent.slice(9);
-	if (!stageTitle) { alert("지역과 스테이지를 먼저 입력하세요!"); throw "No stageTitle"; }
+	if (!stageTitle) { alert("지역과 ステージ를 먼저 입력하세요!"); throw "No stageTitle"; }
 	var wave = document.getElementById("input-wave").value;
 	if (!wave)
 	{
@@ -212,11 +212,11 @@ async function submitWave()
 	}
 	if (!obj.stage.find(el => el.title == stageTitle).wave && wave != 1)
 	{
-		alert("첫 웨이브는 1부터 시작해야 합니다!");
+		alert("첫 웨이브는 1区터 시작해야 합니다!");
 		throw "Wrong Wave Number";
 	}
 
-	//스테이지에 웨이브 프로퍼티가 없을 시 새로 생성
+	//ステージ에 웨이브 프로퍼티가 없을 시 새로 생성
 	if (!obj.stage.find(el => el.title == stageTitle).wave)
 	{
 		obj.stage.find(el => el.title == stageTitle)["wave"] = [{}];
@@ -306,7 +306,7 @@ function submitEnemyName()
 function submitEnemy()
 {
 	var stageTitle = document.getElementsByClassName("current-stage")[0].textContent.slice(9);
-	if (!stageTitle) { alert("지역과 스테이지를 먼저 입력하세요!"); throw "No stageTitle"; }
+	if (!stageTitle) { alert("지역과 ステージ를 먼저 입력하세요!"); throw "No stageTitle"; }
 	var wave = document.getElementsByClassName("current-wave")[0].textContent.slice(8);
 	if (!wave) { alert("웨이브를 먼저 입력하세요!"); throw "No wave"; }
 
@@ -370,7 +370,7 @@ function submitEnemy()
 function deleteEnemy()
 {
 	var stageTitle = document.getElementsByClassName("current-stage")[0].textContent.slice(9);
-	if (!stageTitle) { alert("지역과 스테이지를 먼저 입력하세요!"); throw "No stageTitle"; }
+	if (!stageTitle) { alert("지역과 ステージ를 먼저 입력하세요!"); throw "No stageTitle"; }
 	var wave = document.getElementsByClassName("current-wave")[0].textContent.slice(8);
 	if (!wave) { alert("웨이브를 먼저 입력하세요!"); throw "No wave"; }
 
@@ -485,10 +485,10 @@ function saveFile(data, fileName)
 
 function drawStageMap(param)
 {
-	//지도 초기화
+	//マップ 초기화
 	resetCell();
 
-	//매개변수가 없을 경우 종료
+	//매改변수가 없을 경우 종료
 	if (!param)
 	{
 		return 0;
@@ -545,7 +545,7 @@ function resetCell()
 	Array.from(document.getElementsByClassName('cell')).forEach(el => { el.innerHTML = ''; el.classList.remove('cell-selected'); });
 }
 
-//지도에서 적 선택시 스탯 채우기
+//マップ에서 적 선택시 스탯 채우기
 function loadEnemyStat([stageTitle, wave, pos])
 {
 	var waveData = obj.stage.find(el => el.title == stageTitle).wave[wave - 1];
@@ -578,7 +578,7 @@ function loadEnemyStat([stageTitle, wave, pos])
 	$('#enemy-stat').html(statstring);
 }
 
-//스테이지 입력칸 비우고 비활성화
+//ステージ 입력칸 비우고 비활성화
 function resetStageInput()
 {
 	Array.from(document.querySelectorAll("#form-stage input[type='text'], #form-stage input[type='number']")).forEach(el =>
@@ -588,11 +588,11 @@ function resetStageInput()
 	});
 	Array.from(document.getElementsByClassName("current-stage")).forEach(el =>
 	{
-		el.textContent = "현재 스테이지: ";
+		el.textContent = "현재 ステージ: ";
 	});
 }
 
-//스테이지 입력칸 활성화
+//ステージ 입력칸 활성화
 function enableStageInput()
 {
 	Array.from(document.querySelectorAll("#form-stage input")).forEach(el =>

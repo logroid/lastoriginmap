@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>철충 정보 입력기</title>
+    <title>鉄虫 情報 입력기</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/dataedit.css">
     <script src="js/jquery.min.js"></script>
@@ -21,8 +21,8 @@
 <body>
 	<div class="container">
 		<header>
-			<h2 id="title">라스트 오리진 철충 지도 적 데이터 편집기 v0.1</h2>
-			<p>본 페이지는 철충 지도의 제작 보조용으로만 사용되고 있습니다. 편집기에 대한 요청이나 제보는 받지 않습니다.</p>
+			<h2 id="title">라스트 오리진 鉄虫 マップ 적 데이터 편집기 v0.1</h2>
+			<p>본 페이지는 鉄虫 マップ의 제작 보조용으로만 사용되고 있습니다. 편집기에 대한 요청이나 제보는 받지 않습니다.</p>
 		</header>
 		<section>
 			<hr>
@@ -35,21 +35,21 @@
 				<datalist id="index-list">
 				</datalist>
 				<button type="button" id="button-index">불러오기</button><br>
-				<label for="input-name">철충 이름:</label>
+				<label for="input-name">鉄虫 이름:</label>
 				<input type="text" name="enemyname" id="input-name" list="name-list" autocomplete="off">
 				<datalist id="name-list">
 				</datalist>
 				<button type="button" id="button-name">불러오기</button><br>
 				<label for="input-img">이미지: </label><input type="text" autocomplete="off" id="input-img"><br >
 				<label for="input-type">타입: </label><input type="text" id="input-type"><br >
-				<label for="input-info">정보: </label><textarea autocomplete="off" id="input-info" style="width:100%; height:4em;"></textarea><br >
+				<label for="input-info">情報: </label><textarea autocomplete="off" id="input-info" style="width:100%; height:4em;"></textarea><br >
 				<label for="input-HP">체력: </label><input type="text" autocomplete="off" id="input-HPbase"><input type="text" autocomplete="off" id="input-HPincrement"><br >
-				<label for="input-ATK">공격력: </label><input type="text" autocomplete="off" id="input-ATKbase"><input type="text" autocomplete="off" id="input-ATKincrement"><br >
-				<label for="input-DEF">방어력: </label><input type="text" autocomplete="off" id="input-DEFbase"><input type="text" autocomplete="off" id="input-DEFincrement"><br >
-				<label for="input-AGI">행동력: </label><input type="text" autocomplete="off" id="input-AGI"><br >
-				<label for="input-CRT">치명타: </label><input type="text" autocomplete="off" id="input-CRT"><br >
-				<label for="input-HIT">적중률: </label><input type="text" autocomplete="off" id="input-HIT"><br >
-				<label for="input-DOD">회피율: </label><input type="text" autocomplete="off" id="input-DOD"><br >
+				<label for="input-ATK">攻撃力: </label><input type="text" autocomplete="off" id="input-ATKbase"><input type="text" autocomplete="off" id="input-ATKincrement"><br >
+				<label for="input-DEF">防御力: </label><input type="text" autocomplete="off" id="input-DEFbase"><input type="text" autocomplete="off" id="input-DEFincrement"><br >
+				<label for="input-AGI">行動力: </label><input type="text" autocomplete="off" id="input-AGI"><br >
+				<label for="input-CRT">クリティカル: </label><input type="text" autocomplete="off" id="input-CRT"><br >
+				<label for="input-HIT">命中率: </label><input type="text" autocomplete="off" id="input-HIT"><br >
+				<label for="input-DOD">回避率: </label><input type="text" autocomplete="off" id="input-DOD"><br >
 				<label for="input-resist">속성저항: </label><input type="text" autocomplete="off" id="input-resist"><br >
 				<input type="submit" value="적 입력"><br >
 			</form>

@@ -8,7 +8,7 @@ window.onload = async function ()
 		areaName = areaData.title;
 	}
 	document.title = areaName;
-	$("#area_title").html(areaName + ' 철충 지도');
+	$("#area_title").html(areaName + ' 鉄虫 マップ');
 
 	drawArea(await areaData);
 };
